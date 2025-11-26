@@ -19,7 +19,7 @@ df$ID <- seq_len(nrow(df))
 # ----------------------------------
 
 # Initial Model
-fit <- lm(sqrt(value) ~ Place * Time, data=df)
+fit <- lm(sqrt(value) ~ Place + Time, data=df)
 summary(fit)
 
 # ----------------------------------
@@ -77,5 +77,3 @@ summary(aov_model, split = list(
     Place = list(SaudervsNest = 1, IKBvsSauder = 2),
     Time  = list(EarlyvsLate = 1, MorningvsLunch = 2)
 ))
-
-# Contrast Confidence Interval
